@@ -42,12 +42,13 @@ def tri_nom(tab):
     i = 1
     while i < n:
         j = i
-        while j > 0 and tab[j-1][2] > tab[j][2]:
+        while j > 0 and tab[j-1] > tab[j]:
             tab[j-1], tab[j] = tab[j], tab[j-1]
             j -= 1
         i += 1
     return tab
-       
+
+
 def decortiquer(nom):
     i = 0
     nom_traduit = zeros(len(nom))
@@ -56,7 +57,7 @@ def decortiquer(nom):
         i += 1
     return nom_traduit
 
-
+print(tri_nom(tab))
 
 
 

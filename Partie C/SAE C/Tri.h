@@ -1,0 +1,16 @@
+#ifndef TRI_H_INCLUDED
+#define TRI_H_INCLUDED
+
+int taille_tab(int tab[]);
+
+int indice_du_mini_a_partir_de(int tab[], int i, int taille);
+
+void tri_selection(int tab[], int taille);
+
+void inserer(int tab[], int i);
+
+void tri_insertion(int tab[], int taille);
+
+void renvoi_tab(int tab[], int taille);
+
+#endif // TRI_H_INCLUDED

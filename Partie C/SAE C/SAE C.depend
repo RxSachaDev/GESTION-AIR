@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1701367117 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Tri.h"
+
+1701367331 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
+
+1701367128 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
+	<stdio.h>
+	<stdlib.h>
+
