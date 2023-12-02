@@ -51,13 +51,12 @@ def tri_nom(tab):
 
 def decortiquer(nom):
     i = 0
-    nom_traduit = zeros(len(nom))
     while i < len(nom):
-        nom_traduit[i] = ord(nom[i])
+        nom[i] = ord(nom[i])
         i += 1
-    return nom_traduit
+    return nom
+
+
+tab=['bbc', 'bcb', 'cbb', 'ddd', 'eqod', 'ffrf']
 
 print(tri_nom(tab))
-
-
-

@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Tri.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Tri.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -13,4 +13,10 @@ void tri_insertion(int tab[], int taille);
 
 void renvoi_tab(int tab[], int taille);
 
+void tri_nom(char tab[], int taille);
+
+void tri_age(int tab, int taille);
+
+void indice_du_maxi_a_parti_de(int tab, int i);
+
 #endif // TRI_H_INCLUDED

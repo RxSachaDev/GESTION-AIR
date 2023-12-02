@@ -14,7 +14,7 @@ int taille_tab(int tab[])
 
 void inserer(int tab[], int i)
 {
-    int val = tab[i];
+    char val = tab[i];
     while (i>0 && tab[i] < tab[i-1]){
         tab[i] = tab[i-1];
         tab[i-1] = val;
@@ -57,11 +57,29 @@ void tri_selection(int tab[], int taille)
         i = i+1;
     }
 }
-void renvoi_tab(int tab[], int taille)
+void renvoi_tab( int tab[], int taille)
 {
     int i =0;
     while ( i < taille){
-        printf("%d ", tab[i]);
+        printf("%c ", tab[i]);
         i += 1;
     }
 }
+
+/*
+void tri_nom(char tab[], int taille)
+{
+    int i = 1, j;
+    char temp;
+    while (i < taille){
+        j = i;
+        while(j>0 && tab[j-1] > tab[j]){
+            temp = tab[j-1];
+            tab[j-1] = tab[j];
+            tab[j] = temp;
+            j--;
+        }
+        i++;
+    }
+}
+*/
