@@ -1,16 +1,24 @@
+#include "Tri.h"
+#include "vol.h"
+#include "passager.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "Tri.h"
+#include <string.h>
 
 int main()
 {
-    char tab[6] = {'bbc', 'bcb', 'cbb', 'ddd', 'eqod', 'ffrf'};
-    int taille = taille_tab(tab);
-    printf("%d \n", taille);
-    printf("Tableau original :\n");
-    renvoi_tab(tab, taille);
-    printf("\n");
-    tri_nom(tab, taille);
-    renvoi_tab(tab,taille);
+    printf("Entrez le nom du fichier : ");
+    char filename[50], *a;
+    fgets(filename, sizeof(filename), stdin);
+    strtok(filename, "\n");
+
+    printf("Entrez l'heure : ");
+    int hour;
+    scanf("%d", &hour);
+    getchar();
+
+    generation_tab(&hour, filename);
+
+
     return 0;
 }

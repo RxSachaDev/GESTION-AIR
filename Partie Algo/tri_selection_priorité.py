@@ -57,6 +57,6 @@ def decortiquer(nom):
     return nom
 
 
-tab=['bbc', 'bcb', 'cbb', 'ddd', 'eqod', 'ffrf']
+tab=[2019, 2000, 2012, 1999, 2001, 2013]
 
-print(tri_nom(tab))
+print(tri_age(tab))

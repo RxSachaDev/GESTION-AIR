@@ -1,9 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "Tri.h"
 
 int taille_tab(int tab[])
 {
-    int i = 0, taille = 0;
+    int i = 1, taille = 0;
 
     while(tab[i] != 0){
         taille += 1;
@@ -61,25 +60,23 @@ void renvoi_tab( int tab[], int taille)
 {
     int i =0;
     while ( i < taille){
-        printf("%c ", tab[i]);
+        printf("%d ", tab[i]);
         i += 1;
     }
 }
 
-/*
-void tri_nom(char tab[], int taille)
+void tri_age( int tab[], int taille)
 {
-    int i = 1, j;
-    char temp;
-    while (i < taille){
-        j = i;
-        while(j>0 && tab[j-1] > tab[j]){
-            temp = tab[j-1];
-            tab[j-1] = tab[j];
-            tab[j] = temp;
-            j--;
+    int i=0,plus_douze = taille-1, temp;
+    while(i < plus_douze){
+        if (tab[i] >= 2011){
+            i++;
         }
-        i++;
+        else {
+            temp = tab[i];
+            tab[i] = tab[plus_douze];
+            tab[plus_douze] = temp;
+            plus_douze -= 1;
+        }
     }
 }
-*/

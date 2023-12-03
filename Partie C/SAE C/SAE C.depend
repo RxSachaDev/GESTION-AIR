@@ -1,12 +1,36 @@
 # depslib dependency file v1.0
-1701522677 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\main.c
+1701615986 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\main.c
+	"Tri.h"
+	"vol.h"
+	"passager.h"
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+
+1701613159 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
+	<stdio.h>
+	<stdlib.h>
+
+1701613390 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
 	"Tri.h"
 
-1701522439 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
+1701613959 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
+	"vol.h"
 
-1701522591 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
+1701621801 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	"passager.h"
+
+1701621312 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.h
+
+1701616220 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
+	"passager.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1701619726 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
+	"vol.h"
 
