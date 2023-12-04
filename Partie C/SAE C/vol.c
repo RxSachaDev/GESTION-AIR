@@ -2,6 +2,7 @@
 #include "vol.h"
 #include "passager.h"
 
+void afficherPassager(Vol *vols, int taille);
 
 // Fonction pour lire les donn�es du fichier CSV et remplir le tableau de struct
 void lireDonneesCSV(const char *nomFichier, Vol *vols, int *taille) {
@@ -45,7 +46,7 @@ void lireDonneesCSV(const char *nomFichier, Vol *vols, int *taille) {
             // Assurez-vous que vous avez suffisamment d'espace pour les passagers
             if (i < MAX_PASSAGERS) {
                 // Pour extraire les champs des passagers et les mettre
-                int passagerResultats = sscanf(passager, "%99[^,],%99[^,],%9[^,],%d,%lf",
+                int passagerResultats = sscanf(passager, "%99[^,],%99[^,],%10[^,],%d,%lf",
                     vols[*taille].passager[i].nom,
                     vols[*taille].passager[i].prenom,
                     vols[*taille].passager[i].date_naiss,
@@ -107,7 +108,8 @@ void afficherTabVol(Vol *vols, int taille, int heureActuelle){
 }
 
 // tableau qui va prendre toutes les structures charge
-void generation_tab(int *heureActuelle, const char *fichierCSV){
+void generation_tab(int *heureActuelle, const char *fichierCSV)
+{
     Vol vols[TAILLE_TAB];
     int taille = 0;
     lireDonneesCSV(fichierCSV, vols, &taille);
@@ -115,5 +117,6 @@ void generation_tab(int *heureActuelle, const char *fichierCSV){
     afficherTabVol(vols, taille, *heureActuelle);
     trierTab(vols, taille);
     afficherTabVol(vols, taille, *heureActuelle);
+    // Modifiez l'appel de la fonction
     afficherPassager(vols, taille);
 }

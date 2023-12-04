@@ -1,6 +1,6 @@
 #include "Tri.h"
 
-int taille_tab(int tab[])
+int taille_tab(char tab[])
 {
     int i = 1, taille = 0;
 

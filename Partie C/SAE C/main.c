@@ -1,9 +1,11 @@
-#include "Tri.h"
-#include "vol.h"
-#include "passager.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/*Modules*/
+#include "Tri.h"
+#include "vol.h"
+#include "passager.h"
 
 int main()
 {

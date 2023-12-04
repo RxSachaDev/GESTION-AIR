@@ -1,29 +1,32 @@
 #include "passager.h"
-#include "Tri.h"
+#include "tri.h"
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void afficherPassager(Vol *vols, int taille)
 {
 
-    printf("\n| Nom | Prénom | Date de naissance | Numéro du siège | Prix du billet |\n");
-    printf("-------------------------------------------------------------------------");
-    int i=0,plus_douze = taille-1, temp, j, taille2 = taille();
-    while(i < plus_douze){
+     printf("\n| Nom | Prenom | Date de naissance | Numero du siege | Prix du billet |\n");
+     printf("-------------------------------------------------------------------------\n");
+     int i=0, j=0, plus_douze = taille - 1, temp, taille2;
+     taille2 = taille_tab(vols[i].passager[j].date_naiss);
+     while(i < plus_douze){
             j = 0;
-            while ( j < 10){
-                if (vols[i].passager[j].nom >= 2011){
+            while ( j < taille2 - 1){
+
+                if ( *vols[i].passager[j].date_naiss + taille2 - 4>= 2011){
                     j++;
                 }
                 else {
-                    temp = vols[i].passager[j].nom;
-                    vols[i].passager[j].nom = vols[i].passager[j].nom;
-                    tab[plus_douze] = temp;
+                    temp = *vols[i].passager[j].date_naiss;
+                    *vols[i].passager[j].date_naiss = *vols[i].passager[taille2 - 1].date_naiss;
+                    *vols[i].passager[taille2 - 1].date_naiss = temp;
                     plus_douze -= 1;
                     j++;
+                    printf("%s ", vols[i].passager[j].date_naiss);
                 }
                 i++;
-        }
+            }
     }
 }
