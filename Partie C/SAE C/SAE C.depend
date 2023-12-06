@@ -7,11 +7,11 @@
 	"vol.h"
 	"passager.h"
 
-1701712352 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
+1701780109 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
 	<stdio.h>
 	<stdlib.h>
 
-1701712352 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
+1701780109 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
 	"Tri.h"
 
 1701712074 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
@@ -27,10 +27,12 @@
 	"Tri.h"
 	"vol.h"
 
-1701715428 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
+1701780509 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
 	"passager.h"
 	"tri.h"
+	<string.h>
 	<stdio.h>
+	<stdlib.h>
 
 1701619726 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
 	"vol.h"

@@ -1,12 +1,9 @@
 #include "Tri.h"
 
-int taille_tab(char tab[])
-{
-    int i = 1, taille = 0;
-
-    while(tab[i] != 0){
-        taille += 1;
-        i +=1;
+int taille_tab(const char *chaine) {
+    int taille = 0;
+    while (chaine[taille] != '\0') {
+        taille++;
     }
     return taille;
 }

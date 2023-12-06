@@ -9,4 +9,3 @@ def gen_tab(n : int):
         i = i + 1
     return s
 petit = gen_tab(10)
-print(petit)

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int taille_tab(char tab[]);
+int taille_tab(const char *chaine);
 
 int indice_du_mini_a_partir_de(int tab[], int i, int taille);
 
