@@ -9,7 +9,6 @@
 
 #define TAILLE_TAB 100
 #define MAX_PASSAGERS 500
-
 // Définition de la structure passager
 struct Passager
 {
