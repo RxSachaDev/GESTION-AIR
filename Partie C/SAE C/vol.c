@@ -2,7 +2,6 @@
 #include "vol.h"
 #include "passager.h"
 
-void afficherPassager(Vol *vols, int taille);
 
 // Fonction pour lire les donn�es du fichier CSV et remplir le tableau de struct
 void lireDonneesCSV(const char *nomFichier, Vol *vols, int *taille) {
@@ -112,11 +111,11 @@ void generation_tab(int *heureActuelle, const char *fichierCSV)
 {
     Vol vols[TAILLE_TAB];
     int taille = 0;
-    lireDonneesCSV(fichierCSV, vols, &taille);
+    /*lireDonneesCSV(fichierCSV, vols, &taille);
     trierTab(vols, taille);
     afficherTabVol(vols, taille, *heureActuelle);
     trierTab(vols, taille);
     afficherTabVol(vols, taille, *heureActuelle);
-    // Modifiez l'appel de la fonction
-    afficherPassager(vols, taille);
+    // Modifiez l'appel de la fonction*/
+    afficherPassager(vols, taille, fichierCSV);
 }

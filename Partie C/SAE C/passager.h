@@ -6,6 +6,5 @@
 
 
 // Modifiez le prototype de la fonction
-void afficherPassager(Vol *vols, int taille);
-
+void afficherPassager(Vol *vols, int taille, const char *nomFichier);
 #endif // PASSAGER_H_INCLUDED
