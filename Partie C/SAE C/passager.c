@@ -3,38 +3,76 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
+// 4383 jours séparent la date du rendu et cette même date il y a 12 ans; attention aux années bissextiles
+
+int annee_bissextile(int annee)
+{
+    if ((annee % 4 == 0 && annee % 100 != 0) || (annee % 400 == 0)) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+int nombre_jour(int mois, int annee)
+{
+    if (mois == 2 && annee_bissextile(annee)) {
+        return 29;
+    } else if (mois == 2) {
+        return 28;
+    } else if (mois == 4 || mois == 6 || mois == 9 || mois == 11) {
+        return 30;
+    } else {
+        return 31;
+    }
+}
 
 void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     lireDonneesCSV(nomFichier, vols, &taille);
-    printf("%c", nomFichier);
+    printf("%s", nomFichier);
     printf("\n| Nom | Prenom | Date de naissance | Numero du siege | Prix du billet |\n");
     printf("-------------------------------------------------------------------------\n");
+    int i, taille2, j, k, day, month, year, cpt_month, cpt_day;
+    double cpt_year, cpt_total;
+    char temp[10];
+    time_t t = time(NULL);
 
-    int i = 0, j = 0, plus_douze = taille - 1, temp, taille2, k, l;
-    char tab[100];
-    printf("ok1");
-    while (i < plus_douze) {
+    // Convertir le temps actuel en structure tm
+    struct tm *timeinfo = localtime(&t);
+
+    int annee = timeinfo->tm_year + 1900;
+    int mois = timeinfo->tm_mon + 1;
+    int jour = timeinfo->tm_mday;
+
+
+    for (i = 1; i<taille; i++){
             printf("\n");
-            printf("ok2");
-        j = 0;
         taille2 = taille_tab(vols[i].passager[j].date_naiss);
-
-        while (j < taille2){
-            printf("ok3");
-            if (atoi(vols[i].passager[j].date_naiss + taille2 - 4 ) >= 2011) {
-                tab[j] = *vols[i].passager[j].date_naiss;
+        cpt_day = 0;
+        cpt_month = 0;
+        cpt_year = 0;
+        cpt_total = 0;
+        for (j=1; j<3; j++){
+            sscanf(vols[i].passager[j].date_naiss,"%d/%d/%d", &day, &month, &year);
+            int diff;
+            diff = annee-year;
+            cpt_year = diff * 365;
+            for (k=1; k<=month; k++){
+                cpt_month += nombre_jour(k, year);
             }
-            else {
-                tab[taille2-1] = *vols[i].passager[j].date_naiss;
-                taille2 -= 1;
+            for (int l = 0; l <= day; l++){
+                cpt_day += 1;
             }
-            j++;
+            cpt_total = cpt_day + cpt_month + cpt_year;
+            if (cpt_total >= 4383){
+                strcpy(temp, vols[i].passager[j].date_naiss);
+                strcpy(vols[i].passager[j].date_naiss, vols[i].passager[taille2-1].date_naiss);
+                strcpy(vols[i].passager[taille2-1].date_naiss, temp);
+            }
+            printf("%s = %.2f ", vols[i].passager[j].date_naiss, cpt_year);
         }
-        for (k=0;k<taille2;k++){
-            printf("%s ", tab[k]);
-            printf("ok6");
-        }
-        i++;
     }
 }

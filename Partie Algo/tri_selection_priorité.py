@@ -91,4 +91,4 @@ def tri_a_bulle(tab):
         i = i-1  
     return tab      
 
-print(tri_selection(grand1))
+print(tri_selection(gen_tab.grand1))

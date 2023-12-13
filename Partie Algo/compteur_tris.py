@@ -5,7 +5,7 @@ import gen_tab
 def tri_age_cpt(tab):
     i = 0
     pdouze = len(tab) - 1
-    cpt = 2
+    cpt = 3
     while i < pdouze:
         if tab[i] >= 2011:
             i = i + 1
@@ -125,6 +125,6 @@ def tri_a_bulle_cpt(tab):
         cpt += 3  
     return cpt
 
-print((tri_age_cpt(gen_tab.petit1)+tri_age_cpt(gen_tab.petit2)+tri_age_cpt(gen_tab.petit3)+
-       tri_age_cpt(gen_tab.petit4)+tri_age_cpt(gen_tab.petit5)+tri_age_cpt(gen_tab.petit6)+
-       tri_age_cpt(gen_tab.petit7)+tri_age_cpt(gen_tab.petit8)+tri_age_cpt(gen_tab.petit9)+tri_age_cpt(gen_tab.petit10))/10)
+print((tri_age_cpt(gen_tab.grand1)+tri_age_cpt(gen_tab.grand2)+tri_age_cpt(gen_tab.grand3)+
+       tri_age_cpt(gen_tab.grand4)+tri_age_cpt(gen_tab.grand5)+tri_age_cpt(gen_tab.grand6)+
+       tri_age_cpt(gen_tab.grand7)+tri_age_cpt(gen_tab.grand8)+tri_age_cpt(gen_tab.grand9)+tri_age_cpt(gen_tab.grand10))/10)
