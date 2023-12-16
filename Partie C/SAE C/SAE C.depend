@@ -23,16 +23,17 @@
 	<stdlib.h>
 	<string.h>
 
-1702503902 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.h
+1702740121 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.h
 	"Tri.h"
 	"vol.h"
 
-1702299251 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
+1702746046 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
 	"passager.h"
 	"tri.h"
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 
 1701619726 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
 	"vol.h"

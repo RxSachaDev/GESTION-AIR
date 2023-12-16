@@ -7,6 +7,7 @@
 
 // Modifiez le prototype de la fonction
 void afficherPassager(Vol *vols, int taille, const char *nomFichier);
-int nombre_jour(int mois, int annees);
+int nombre_jour_mois(int mois, int annees);
 int annee_bissextile(int annee);
+int nombre_jour(int jour, int mois, int annee, int day);
 #endif // PASSAGER_H_INCLUDED
