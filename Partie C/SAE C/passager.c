@@ -96,9 +96,11 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
             echangerIndices(&indices[min_index], &indices[j]);
         }
 
-
         for (j = 0; j < taille2; j++) {
-            printf("%s ", vols[i].passager[indices[j]].date_naiss);
+            printf("%s/%s/%s/ ", vols[i].passager[indices[j]].nom,
+                    vols[i].passager[indices[j]].prenom,
+                    vols[i].passager[indices[j]].date_naiss);
+
         }
     }
 }
