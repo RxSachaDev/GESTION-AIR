@@ -77,3 +77,30 @@ void tri_age( int tab[], int taille)
         }
     }
 }
+
+int indice_du_maxi_a_parti_de(double tab[], int i, int taille)
+{
+    int i_maxi = i;
+
+    while (i < taille){
+        if (tab[i] > tab[i_maxi]){
+            i_maxi = i;
+        }
+        i = i+1;
+    }
+    return i_maxi;
+
+}
+
+void tri_selection_dec(double tab[], int taille)
+{
+    int i = 0, i_maxi, temp;
+
+    while (i < taille - 1){
+        i_maxi = indice_du_maxi_a_parti_de(tab, i, taille);
+        temp = tab[i];
+        tab[i] = tab[i_maxi];
+        tab[i_maxi] = temp;
+        i = i+1;
+    }
+}

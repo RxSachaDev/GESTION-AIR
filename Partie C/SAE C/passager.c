@@ -52,7 +52,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     printf("\n| Nom | Prenom | Date de naissance | Numero du siege | Prix du billet |\n");
     printf("-------------------------------------------------------------------------\n");
     int i, taille2, j, k, day, month, year;
-    double cpt_month, cpt_day, cpt_year, somme_total;  // Renommée en somme_total
+    double cpt_month, cpt_day, cpt_year, somme_total;
     char temp[10];
     time_t t = time(NULL);
 
@@ -65,9 +65,9 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
 
     for (i = 0; i < taille; i++) {
         printf("\n");
-        taille2 = taille_tab(vols[i].passager[j].date_naiss); // Renommée ici
-        double tab[100]; // Tableau pour stocker les dates
-        int indices[100]; // Tableau pour stocker les indices des dates
+        taille2 = taille_tab(vols[i].passager[j].date_naiss);
+        double tab[100];
+        int indices[100];
 
         for (j = 0; j < taille2; j++) {
             sscanf(vols[i].passager[j].date_naiss, "%d/%d/%d", &day, &month, &year);
@@ -96,11 +96,44 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
             echangerIndices(&indices[min_index], &indices[j]);
         }
 
-        for (j = 0; j < taille2; j++) {
-            printf("%s/%s/%s/ ", vols[i].passager[indices[j]].nom,
-                    vols[i].passager[indices[j]].prenom,
-                    vols[i].passager[indices[j]].date_naiss);
+        int i_tab2 = 0;
+        int i_tab3 = 0;
+        double tab2[10], tab3[10];
 
+        for (j = 0; j < taille2; j++) {
+            if (tab[j] < 4383) {
+                tab2[i_tab2] = vols[i].passager[indices[j]].prix_billet;
+                i_tab2++;
+            }
+            else {
+                tab3[i_tab3] = vols[i].passager[indices[j]].prix_billet;
+                i_tab3++;
+            }
+        }
+
+        tri_selection_dec(tab2, i_tab2);
+        tri_selection_dec(tab3, i_tab3);
+        for (j=0; j<i_tab2; j++){
+            for (k=0; k< taille2; k++){
+                if (vols[i].passager[indices[k]].prix_billet == tab2[j]){
+                    printf("%s/%s/%s/%d/%.2f\n",vols[i].passager[indices[k]].nom,
+                    vols[i].passager[indices[k]].prenom,
+                    vols[i].passager[indices[k]].date_naiss,
+                    vols[i].passager[indices[k]].numero_siege,
+                    vols[i].passager[indices[k]].prix_billet );
+                }
+            }
+        }
+        for (j=0; j<i_tab3; j++){
+            for (k=0; k< taille2; k++){
+                if (vols[i].passager[indices[k]].prix_billet == tab3[j]){
+                    printf("%s/%s/%s/%d/%.2f\n",vols[i].passager[indices[k]].nom,
+                    vols[i].passager[indices[k]].prenom,
+                    vols[i].passager[indices[k]].date_naiss,
+                    vols[i].passager[indices[k]].numero_siege,
+                    vols[i].passager[indices[k]].prix_billet );
+                }
+            }
         }
     }
 }

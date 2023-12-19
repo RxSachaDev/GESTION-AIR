@@ -19,6 +19,8 @@ void tri_nom(char tab[], int taille);
 
 void tri_age(int tab[], int taille);
 
-void indice_du_maxi_a_parti_de(int tab, int i);
+int indice_du_maxi_a_parti_de(double tab[], int i, int taille);
+
+void tri_selection_dec(double tab[], int taille);
 
 #endif // TRI_H_INCLUDED
