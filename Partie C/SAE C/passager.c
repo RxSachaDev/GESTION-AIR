@@ -49,6 +49,7 @@ void echangerIndices(int *index1, int *index2) {
 void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     lireDonneesCSV(nomFichier, vols, &taille);
     printf("%s", nomFichier);
+    printf("\n\nNVOL\n");
     printf("\n| Nom | Prenom | Date de naissance | Numero du siege | Prix du billet |\n");
     printf("-------------------------------------------------------------------------\n");
     int i, taille2, j, k, day, month, year;
@@ -115,8 +116,8 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         tri_selection_dec(tab3, i_tab3);
         for (j=0; j<i_tab2; j++){
             for (k=0; k< taille2; k++){
-                if (vols[i].passager[indices[k]].prix_billet == tab2[j]){
-                    printf("%s/%s/%s/%d/%.2f\n",vols[i].passager[indices[k]].nom,
+                if (vols[i].passager[indices[k]].prix_billet == tab2[j] && vols[i].passager[indices[k]].prix_billet != 0){
+                    printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[indices[k]].nom,
                     vols[i].passager[indices[k]].prenom,
                     vols[i].passager[indices[k]].date_naiss,
                     vols[i].passager[indices[k]].numero_siege,
@@ -126,8 +127,8 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         }
         for (j=0; j<i_tab3; j++){
             for (k=0; k< taille2; k++){
-                if (vols[i].passager[indices[k]].prix_billet == tab3[j]){
-                    printf("%s/%s/%s/%d/%.2f\n",vols[i].passager[indices[k]].nom,
+                if (vols[i].passager[indices[k]].prix_billet == tab3[j] && vols[i].passager[indices[k]].prix_billet != 0){
+                    printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[indices[k]].nom,
                     vols[i].passager[indices[k]].prenom,
                     vols[i].passager[indices[k]].date_naiss,
                     vols[i].passager[indices[k]].numero_siege,
@@ -136,4 +137,25 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
             }
         }
     }
+
+    printf("\n\n\n");
+
+    const char aeroport[] =
+    "|\\\n"
+    "| \\\n"
+    "|  \\__________________________________\n"
+    "|                                    _\\\n"
+    "|                                   |__\\\n"
+    "\\--------------------------------------|\n"
+    " \\____________________________________/\n"
+    "      |   |                     |\n"
+    "      |   |                     |\n"
+    "     (_) (_)                   (_)\n";
+
+    printf("%s\n", aeroport);
 }
+
+
+
+
+
