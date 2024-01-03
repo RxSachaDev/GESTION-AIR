@@ -91,4 +91,33 @@ def tri_a_bulle(tab):
         i = i-1  
     return tab      
 
-print(tri_selection(gen_tab.grand1))
+
+
+def echange(tab, i, j):
+    temp = tab[i]
+    tab[i] = tab[j] 
+    tab[j] = temp 
+
+def repartition(tab, i_debut, i_fin): 
+    pivot = tab[i_debut]
+    i = i_debut + 1 
+    j = i_fin 
+    while i <= j: 
+        if tab[i] > pivot and tab[j] <= pivot: 
+            echange(tab, i, j) 
+            i = i + 1 
+            j = j - 1 
+        if tab[i] <= pivot: 
+            i = i + 1 
+        if tab[j] > pivot: 
+            j = j - 1 
+    echange(tab, i_debut, j) 
+    return j
+ 
+def tri_rapide(tab, i_debut, i_fin): 
+    if i_debut < i_fin: 
+        i_pivot = repartition(tab, i_debut, i_fin) 
+        tri_rapide(tab, i_debut, i_pivot - 1) 
+        tri_rapide(tab, i_pivot + 1, i_fin)
+    return tab
+print(tri_rapide(gen_tab.petit1,0,9))

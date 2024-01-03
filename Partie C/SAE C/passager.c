@@ -168,7 +168,8 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
             }
         }
     }
-    const char plane[] =
+    i += 1;
+    /*const char plane[] =
         "\n"
         "                                      /\\                                                 _\n"
         "                                     /  \\                                               / |\n"
@@ -192,10 +193,17 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         "        \\/            __--__  |       |                |   |         |           |    |                    \\\n"
         "                  ___|      |_|       |                |   |         |           |    |                     \\\n"
         "     _______     |            |       |            ____|__ |         |           |    |                      \\\n"
-        "    |       |    |            |       |__         |       ||         |           |    |\n";
-    printf("%s", plane);
-
-    i += 1;
+        "    |       |    |            |       |__         |       ||         |           |    |\n"
+        "____|       |    |            |          |_______/        ||         |           |    |\n"
+        "    |       |    |            |          |       |        ||         |           |    |  ___________\n"
+        "    |       |____|            |          |       |        ||         |           |____|_|           |\n"
+        "    |            |            |          |       |        ||         |           |                  |        |\n"
+        "    |            |            |          |       |        ||         |           |                  |       _|_\n"
+        "    |            |            |          |       |        ||         |           |                  |______|   |\n"
+        "    |            |            |          |       |        ||         |           |                         |   |\n"
+        "    |            |            |          |       |        ||         |           |                         |   |\n"
+        "    |            |            |          |       |                                                        _|   |_\n";
+    printf("%s", plane);*/
 
 }
 
