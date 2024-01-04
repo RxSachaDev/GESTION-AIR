@@ -168,7 +168,23 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
             }
         }
     }
-    i += 1;
+    printf("\n\n\n");
+    printf("-------------------------------------------------------------------------\n");
+    char nom[10];
+
+    printf("Saisir le Nom souhaite : ");
+    scanf("%s", &nom);
+    printf("\n\n");
+    for (j=0;j < taille; j++ ){
+        if (strcmp(vols[i].passager[j].nom, nom) == 0){
+            printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[j].nom,
+                vols[i].passager[j].prenom,
+                vols[i].passager[j].date_naiss,
+                vols[i].passager[j].numero_siege,
+                vols[i].passager[j].prix_billet );
+        }
+    }
+
     /*const char plane[] =
         "\n"
         "                                      /\\                                                 _\n"
