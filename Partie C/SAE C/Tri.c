@@ -94,7 +94,8 @@ int indice_du_maxi_a_parti_de(double tab[], int i, int taille)
 
 void tri_selection_dec(double tab[], int taille)
 {
-    int i = 0, i_maxi, temp;
+    int i = 0, i_maxi;
+    double temp;
 
     while (i < taille - 1){
         i_maxi = indice_du_maxi_a_parti_de(tab, i, taille);
@@ -104,3 +105,4 @@ void tri_selection_dec(double tab[], int taille)
         i = i+1;
     }
 }
+

@@ -2,19 +2,6 @@ from random import *
 from numpy import * 
 import gen_tab
 
-
-def tri_age(tab):
-    i = 0
-    pdouze = len(tab) - 1
-    while i < pdouze:
-        if tab[i] >= 2011:
-            i = i + 1
-        else:
-            temp=tab[i]
-            tab[i] = tab[pdouze]
-            tab[pdouze] = temp
-            pdouze = pdouze - 1
-    return tab
                     
 def indice_du_maxi_a_partir_de(tab, i):
     i_maxi = i
@@ -61,8 +48,8 @@ def tri_insertion_dec(tab):
             temp = tab[j-1]
             tab[j-1] = tab[j]
             tab[j] = temp
-            j -= 1
-        i += 1
+            j = j - 1
+        i = i + 1
     return tab
 
 def tri_insertion(tab):
@@ -74,8 +61,8 @@ def tri_insertion(tab):
             temp = tab[j-1]
             tab[j-1] = tab[j]
             tab[j] = temp
-            j -= 1
-        i += 1
+            j = j - 1
+        i = i + 1
     return tab
 
 def tri_a_bulle(tab):
@@ -87,8 +74,8 @@ def tri_a_bulle(tab):
                 temp = tab[j]
                 tab[j] = tab[j+1]
                 tab[j+1] = temp
-            j = j +1
-        i = i-1  
+            j = j + 1
+        i = i - 1  
     return tab      
 
 
@@ -116,8 +103,25 @@ def repartition(tab, i_debut, i_fin):
  
 def tri_rapide(tab, i_debut, i_fin): 
     if i_debut < i_fin: 
-        i_pivot = repartition(tab, i_debut, i_fin) 
-        tri_rapide(tab, i_debut, i_pivot - 1) 
-        tri_rapide(tab, i_pivot + 1, i_fin)
+        pivot = tab[i_debut]
+        i = i_debut + 1 
+        j = i_fin 
+        while i <= j: 
+            if tab[i] > pivot and tab[j] <= pivot: 
+                temp = tab[i]
+                tab[i] = tab[j] 
+                tab[j] = temp
+                i = i + 1 
+                j = j - 1 
+            if tab[i] <= pivot: 
+                i = i + 1 
+            if tab[j] > pivot: 
+                j = j - 1 
+        temp = tab[i_debut]
+        tab[i_debut] = tab[j] 
+        tab[j] = temp
+        tri_rapide(tab, i_debut, j - 1) 
+        tri_rapide(tab, j + 1, i_fin)
     return tab
+
 print(tri_rapide(gen_tab.petit1,0,9))

@@ -2,52 +2,6 @@ from random import *
 from numpy import * 
 import gen_tab
 
-def tri_age_cpt(tab):
-    i = 0
-    pdouze = len(tab) - 1
-    cpt = 3
-    while i < pdouze:
-        if tab[i] >= 2011:
-            i = i + 1
-            cpt += 4
-        else:
-            temp=tab[i]
-            tab[i] = tab[pdouze]
-            tab[pdouze] = temp
-            pdouze = pdouze - 1
-            cpt += 7
-    cpt += 1    
-    return cpt
-
-def tri_selection_dec_cpt(tab):
-    i = 0
-    cpt = 1
-    while i < len(tab) - 1:
-        j = i + 1
-        i_maxi = i
-        cpt += 4
-        while j < len(tab):
-            if tab[j] > tab[i_maxi]:
-                i_maxi = j
-                cpt += 2
-            j = j + 1
-            cpt += 3
-        cpt += 1    
-        temp = tab[i]
-        tab[i] = tab[i_maxi]
-        tab[i_maxi] = temp
-        i = i + 1
-        cpt += 5
-    cpt += 1    
-    return cpt
-
-def indice_du_mini_a_partir_de_cpt(tab, i):
-    i_mini = i
-    while i < len(tab):
-        if tab[i] < tab[i_mini]:
-            i_mini = i
-        i = i + 1
-    return i_mini
 
 def tri_selection_cpt(tab):
     i = 0
@@ -55,76 +9,89 @@ def tri_selection_cpt(tab):
     while i < len(tab) - 1:
         j = i + 1
         i_mini = i
-        cpt += 4
+        cpt = cpt + 6
         while j < len(tab):
             if tab[j] < tab[i_mini]:
                 i_mini = j
-                cpt += 2
+                cpt = cpt + 4
             j = j + 1
-            cpt += 3
-        cpt += 1    
+            cpt = cpt + 5
+        cpt = cpt + 2    
         temp = tab[i]
         tab[i] = tab[i_mini]
         tab[i_mini] = temp
         i = i + 1
-        cpt += 5
-    cpt += 1    
+        cpt = cpt + 5
+    cpt = cpt + 2    
     return cpt
 
-def tri_insertion_dec_cpt(tab):
-    n = len(tab)
-    i = 1
-    cpt = 2
-    while i < n:
-        j = i
-        cpt += 2
-        while j > 0 and tab[j-1] < tab[j]:
-            temp = tab[j-1]
-            tab[j-1] = tab[j]
-            tab[j] = temp
-            j -= 1
-            cpt += 7
-        i += 1
-        cpt += 3
-    cpt += 1    
-    return cpt
 
 def tri_insertion_cpt(tab):
     n = len(tab)
     i = 1
-    cpt = 2
+    cpt = 3
     while i < n:
         j = i
-        cpt += 2
+        cpt = cpt + 2
         while j > 0 and tab[j-1] > tab[j]:
             temp = tab[j-1]
             tab[j-1] = tab[j]
             tab[j] = temp
-            j -= 1
-            cpt += 7
-        i += 1
-        cpt += 3
-    cpt += 1    
+            j = j - 1
+            cpt = cpt + 10
+        i = i + 1
+        cpt = cpt + 6
+    cpt = cpt + 1    
     return cpt
 
 def tri_a_bulle_cpt(tab):
     i = len(tab)-1
-    cpt = 1
+    cpt = 3
     while i > 0:
         j=0
-        cpt += 2
+        cpt = cpt + 2
         while j < i :
             if tab[j] > tab[j + 1]:
                 temp = tab[j]
                 tab[j] = tab[j+1]
                 tab[j+1] = temp
-                cpt += 5
-            j = j +1
-            cpt += 3
+                cpt = cpt + 8
+            j = j + 1
+            cpt = cpt + 3
         i = i-1
-        cpt += 3  
+        cpt = cpt + 4  
     return cpt
 
-print((tri_age_cpt(gen_tab.grand1)+tri_age_cpt(gen_tab.grand2)+tri_age_cpt(gen_tab.grand3)+
-       tri_age_cpt(gen_tab.grand4)+tri_age_cpt(gen_tab.grand5)+tri_age_cpt(gen_tab.grand6)+
-       tri_age_cpt(gen_tab.grand7)+tri_age_cpt(gen_tab.grand8)+tri_age_cpt(gen_tab.grand9)+tri_age_cpt(gen_tab.grand10))/10)
+def tri_rapide_cpt(tab, i_debut, i_fin, cpt): 
+    if i_debut < i_fin: 
+        pivot = tab[i_debut]
+        i = i_debut + 1 
+        j = i_fin
+        cpt = cpt + 5 
+        while i <= j: 
+            if tab[i] > pivot and tab[j] <= pivot: 
+                temp = tab[i]
+                tab[i] = tab[j] 
+                tab[j] = temp
+                i = i + 1 
+                j = j - 1
+                cpt = cpt + 10 
+            if tab[i] <= pivot: 
+                i = i + 1
+                cpt = cpt + 6 
+            if tab[j] > pivot: 
+                j = j - 1
+                cpt = cpt + 7
+        cpt = cpt + 1         
+        temp = tab[i_debut]
+        tab[i_debut] = tab[j] 
+        tab[j] = temp
+        cpt = cpt + 3
+        tri_rapide_cpt(tab, i_debut, j - 1, cpt) 
+        tri_rapide_cpt(tab, j + 1, i_fin, cpt)
+    return cpt
+
+
+print((tri_a_bulle_cpt(gen_tab.grand1)+tri_a_bulle_cpt(gen_tab.grand2)+tri_a_bulle_cpt(gen_tab.grand3)+
+       tri_a_bulle_cpt(gen_tab.grand4)+tri_a_bulle_cpt(gen_tab.grand5)+tri_a_bulle_cpt(gen_tab.grand6)+
+       tri_a_bulle_cpt(gen_tab.grand7)+tri_a_bulle_cpt(gen_tab.grand8)+tri_a_bulle_cpt(gen_tab.grand9)+tri_a_bulle_cpt(gen_tab.grand10))/10)
