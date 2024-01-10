@@ -44,6 +44,6 @@ typedef struct Vol Vol;
 void lireDonneesCSV(const char *nomFichier, Vol *vols, int *taille);
 void trierTab(Vol *vols, int taille);
 void afficherTabVol(Vol *vols, int taille, int heureActuelle);
-void generation_tab(int* heureActuelle, const char *fichierCSV);
+void generation_passager(int* heureActuelle, const char *fichierCSV);
 
 #endif // VOL_H_INCLUDED

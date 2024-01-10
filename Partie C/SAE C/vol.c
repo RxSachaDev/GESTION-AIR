@@ -107,7 +107,7 @@ void afficherTabVol(Vol *vols, int taille, int heureActuelle){
 }
 
 // tableau qui va prendre toutes les structures charge
-void generation_tab(int *heureActuelle, const char *fichierCSV)
+void generation_passager(int *heureActuelle, const char *fichierCSV)
 {
     Vol vols[TAILLE_TAB];
     int taille = 0;

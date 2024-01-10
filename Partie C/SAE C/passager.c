@@ -5,9 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-// 4383 jours sparent la date du rendu et cette mme date il y a 12 ans; attention aux annes bissextiles
-
-
+//Cette fonction cherche à savoir si une année est bissextile ou non, 1 si elle est bissextile 0 si elle ne l'est pas
 int annee_bissextile(int annee) {
     if ((annee % 4 == 0 && annee % 100 != 0) || (annee % 400 == 0)) {
         return 1;
@@ -16,8 +14,9 @@ int annee_bissextile(int annee) {
     }
 }
 
+//Cette fonction renvoi le nombre de jours du mois
 int nombre_jour_mois(int mois, int annee) {
-    if (mois == 2 && annee_bissextile(annee)) {
+    if (mois == 2 && annee_bissextile(annee)) { // Cas d'un février d'une année bissextile
         return 29;
     } else if (mois == 2) {
         return 28;
@@ -27,20 +26,20 @@ int nombre_jour_mois(int mois, int annee) {
         return 31;
     }
 }
-
+// Cette fonction renvoi le nombre de jours qui sépare les 2 jours dans une
 int nombre_jour(int jour, int mois, int annee, int day) {
     int diff;
     diff = day - jour;
     return diff;
 }
-
+// Cette fonction renvoi 0 si k existe déjà dans le tableau et 1 si il n'existe pas
 int unique1(int tab[], int taille, int k){
     for (int i = 0; i < taille; i++){
         if (tab[i] == k){
-            return 1;
+            return 0;
         }
     }
-    return 0;
+    return 1;
 }
 
 
@@ -50,7 +49,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     printf("Choisissez le vol pour lequel vous voulez afficher la liste de passager : ");
     scanf("%d",&n_vol);
     printf("\nVol %d\n", n_vol);
-    printf("\n| Nom | Prenom | Date de naissance | Numero du siege | Prix du billet |\n");
+    printf("\n| Nom          | Prenom            |Date Naissance| N  siege |   Prix   |\n");
     printf("-------------------------------------------------------------------------\n");
 
     int i, j, k, day, month, year, cpt = 0, temp2;
@@ -108,7 +107,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
 
     for(j=0; j<cpt; j++){
         for (k=j; k<cpt; k++){
-            if ( vols[i].passager[k].prix_billet == tab[j] && n < cpt2 && unique1(indice, n, k) == 0 ){
+            if ( vols[i].passager[k].prix_billet == tab[j] && n < cpt2 && unique1(indice, n, k) == 1 ){
                 indice[n]= k;
                 n += 1;
             }
@@ -117,7 +116,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     n = 0;
     for(j=0; j<cpt; j++){
         for (k=0; k<cpt; k++){
-            if ( vols[i].passager[k].prix_billet == tab2[j] && n < cpt3 &&  unique1(indice2, n, k) == 0){
+            if ( vols[i].passager[k].prix_billet == tab2[j] && n < cpt3 &&  unique1(indice2, n, k) == 1){
                 indice2[n]= k;;
                 n += 1;
             }
@@ -160,7 +159,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         }
     }
     for (j=0; j<cpt2; j++){
-        printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[indice[j]].nom,
+        printf("|  %-10s  |      %-11s  |  %s  |  %-6d  |  %.2f  |\n",vols[i].passager[indice[j]].nom,
                 vols[i].passager[indice[j]].prenom,
                 vols[i].passager[indice[j]].date_naiss,
                 vols[i].passager[indice[j]].numero_siege,
@@ -168,14 +167,13 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
 
     }
     for (j=0; j<cpt3; j++){
-        printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[indice2[j]].nom,
+        printf("|  %-10s  |      %-11s  |  %s  |  %-6d  |  %.2f  |\n",vols[i].passager[indice2[j]].nom,
                 vols[i].passager[indice2[j]].prenom,
                 vols[i].passager[indice2[j]].date_naiss,
                 vols[i].passager[indice2[j]].numero_siege,
                 vols[i].passager[indice2[j]].prix_billet );
 
     }
-    printf("\n\n\n");
     printf("-------------------------------------------------------------------------\n");
     char nom[20], prenom[20];
     int resultat[cpt];
@@ -187,7 +185,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     k=0;
     for (j=0;j < cpt; j++ ){
         if (strcmp(vols[i].passager[j].nom, nom) == 0){
-            printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[j].nom,
+            printf("|  %-10s  |      %-11s  |  %s  |  %-6d  |  %.2f  |\n",vols[i].passager[j].nom,
                 vols[i].passager[j].prenom,
                 vols[i].passager[j].date_naiss,
                 vols[i].passager[j].numero_siege,
@@ -199,7 +197,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     }
     printf("\n");
     if (trouver == 0){
-        printf("Le nom '%s' est introuvable pour ce vol.", nom);
+        printf("Le nom '%s' est introuvable pour ce vol.\n\n", nom);
     }
     else if (trouver > 1){
         printf("Entrer un Prenom : ");
@@ -207,7 +205,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         printf("\n");
         for (j=0;j < k; j++ ){
             if (strcmp(vols[i].passager[resultat[j]].prenom, prenom) == 0){
-                printf("|  %s  |  %s  |  %s  |  %d  |  %.2f  |\n",vols[i].passager[resultat[j]].nom,
+                printf("|  %-10s  |      %-11s  |  %-4s  |  %-6d  |  %.2f  |\n",vols[i].passager[resultat[j]].nom,
                     vols[i].passager[resultat[j]].prenom,
                     vols[i].passager[resultat[j]].date_naiss,
                     vols[i].passager[resultat[j]].numero_siege,
@@ -217,9 +215,10 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
         }
         printf("\n");
         if (trouver2 == 0){
-            printf("Le prenom '%s' est introuvable pour ce vol.", prenom);
+            printf("Le prenom '%s' est introuvable pour ce vol.\n\n", prenom);
         }
     }
 }
+
 
 
