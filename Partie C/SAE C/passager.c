@@ -34,7 +34,7 @@ int nombre_jour(int jour, int mois, int annee, int day) {
     return diff;
 }
 
-int unique(int tab[], int taille, int k){
+int unique1(int tab[], int taille, int k){
     for (int i = 0; i < taille; i++){
         if (tab[i] == k){
             return 1;
@@ -43,18 +43,6 @@ int unique(int tab[], int taille, int k){
     return 0;
 }
 
-// Fonction pour changer deux dates dans le tableau
-void echangerDates(double *date1, double *date2) {
-    double temp = *date1;
-    *date1 = *date2;
-    *date2 = temp;
-}
-
-void echangerIndices(int index1, int index2) {
-    int temp = index1;
-    index1 = index2;
-    index2 = temp;
-}
 
 void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     lireDonneesCSV(nomFichier, vols, &taille);
@@ -67,7 +55,6 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
 
     int i, j, k, day, month, year, cpt = 0, temp2;
     double cpt_month, cpt_day, cpt_year, somme_total;
-    double temp[1];
     time_t t = time(NULL);
 
     // Convertir le temps actuel en structure tm
@@ -121,7 +108,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
 
     for(j=0; j<cpt; j++){
         for (k=j; k<cpt; k++){
-            if ( vols[i].passager[k].prix_billet == tab[j] && n < cpt2 && unique(indice, n, k) == 0 ){
+            if ( vols[i].passager[k].prix_billet == tab[j] && n < cpt2 && unique1(indice, n, k) == 0 ){
                 indice[n]= k;
                 n += 1;
             }
@@ -130,7 +117,7 @@ void afficherPassager(Vol *vols, int taille, const char *nomFichier) {
     n = 0;
     for(j=0; j<cpt; j++){
         for (k=0; k<cpt; k++){
-            if ( vols[i].passager[k].prix_billet == tab2[j] && n < cpt3 &&  unique(indice2, n, k) == 0){
+            if ( vols[i].passager[k].prix_billet == tab2[j] && n < cpt3 &&  unique1(indice2, n, k) == 0){
                 indice2[n]= k;;
                 n += 1;
             }
