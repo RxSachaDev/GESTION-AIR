@@ -1,0 +1,162 @@
+# depslib dependency file v1.0
+1704934841 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<string.h>
+	"recherche.h"
+	"vol.h"
+	"passager.h"
+	"retard.h"
+	"color.h"
+	"flyingplane.h"
+	"Tri.h"
+
+1702979415 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.h
+	<stdio.h>
+	<stdlib.h>
+
+1704821314 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\tri.c
+	"Tri.h"
+
+1704933900 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
+	"vol.h"
+	"passager.h"
+
+1704933986 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1704933427 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.h
+	"vol.h"
+	"Tri.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1704935408 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\passager.c
+	"passager.h"
+
+1701619726 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\vol.c
+	"vol.h"
+
+1704819084 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\color.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"color.h"
+
+1704819084 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\color.h
+
+1704935567 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\planeflying.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1704819084 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\recherche.c
+	"recherche.h"
+
+1704819084 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\recherche.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<strings.h>
+	<ctype.h>
+	"vol.h"
+
+1704935035 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\retard.c
+	"retard.h"
+	"flyingplane.h"
+
+1704934690 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\retard.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"vol.h"
+
+1704935694 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\sae c\flyingplane.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1704819084 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\color.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"color.h"
+
+1704939553 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\color.h
+
+1704945054 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<string.h>
+	"recherche.h"
+	"vol.h"
+	"passager.h"
+	"retard.h"
+	"color.h"
+	"flyingplane.h"
+
+1704939651 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\recherche.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<strings.h>
+	<ctype.h>
+	"vol.h"
+
+1704939926 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\vol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1704943762 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\passager.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Tri.h"
+	"vol.h"
+
+1704939692 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\tri.h
+	<stdio.h>
+	<stdlib.h>
+
+1704934690 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\retard.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"vol.h"
+
+1704935694 c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\flyingplane.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1704945054 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\passager.c
+	"passager.h"
+
+1704940204 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\planeflying.c
+	"flyingplane.h"
+
+1704939323 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\recherche.c
+	"recherche.h"
+
+1704940149 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\retard.c
+	"retard.h"
+	"flyingplane.h"
+
+1704821314 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\tri.c
+	"Tri.h"
+
+1704943294 source:c:\users\sacha\documents\but1\s1\langage c\sae c\partie c\vol.c
+	"vol.h"
+	"passager.h"
+	"retard.h"
+
