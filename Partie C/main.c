@@ -26,7 +26,7 @@ int main()
     tm_info = localtime(&t); // heure de l'ordinateur
 
     // Calculez l'heure actuelle en format "HHMM"
-    int heureActuelle = tm_info->tm_hour * 100 + tm_info->tm_min;
+    int heureActuelle = 600;//tm_info->tm_hour * 100 + tm_info->tm_min;
     color(13,0);
 
     /*Tableau de struct Vol*/
@@ -64,11 +64,12 @@ int main()
     printf("                                                                                                                        \n");
     printf("                                                                                                                        \n");
     printf("                                                                                                                        \n");
+
     color(15,0);
 
-    char filename[50] = "data_vols.csv";
-    /*printf("Entrez le nom du fichier : ");
-    scanf("%s", &filename);*/
+    char filename[50];
+    printf("\nEntrez le nom du fichier : ");
+    scanf("%s", &filename);
     lireDonneesCSV(filename, vols, &taille);
     trierTab(vols, taille);
     int quitter = 0;

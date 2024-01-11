@@ -31,7 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../Partie Algo/data_vols.csv" />
 		<Unit filename="Tri.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -40,7 +39,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="color.h" />
-		<Unit filename="critere_recherches.h" />
+		<Unit filename="data_vols.csv" />
 		<Unit filename="flyingplane.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />

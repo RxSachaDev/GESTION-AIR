@@ -106,7 +106,7 @@ void afficherTabVol(Vol *vols, int taille, int heureActuelle){
             i++;
         }
     }else{
-        printf("Les vols ne sont compris qu'entre 6h (600) et 22h (2200) dut au couvre feu !");
+        printf("Les vols ne sont compris qu'entre 6h (600) et 22h (2200) dut au couvre feu !\n");
     }
 
 }
